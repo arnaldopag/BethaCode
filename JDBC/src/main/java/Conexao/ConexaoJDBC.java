@@ -25,9 +25,9 @@ public class ConexaoJDBC {
             conexao = DriverManager.getConnection(url,usuario,senha);
             System.out.println("DB conectado!!!");
         }catch (SQLException e){
-            System.out.println("ERRO de conexao ao banco " + e.getMessage());
+            System.out.println("erro sqlexception " + e.getMessage());
         }catch (IOException e){
-            System.out.println("ERRO de conexao ao banco " + e.getMessage());
+            System.out.println("ERRO ioException " + e.getMessage());
         }
         return conexao;
     }
