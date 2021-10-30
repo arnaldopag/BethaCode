@@ -3,12 +3,12 @@ package com.BethaCode.Alunos.rest;
 
 import com.BethaCode.Alunos.model.entity.Aluno;
 import com.BethaCode.Alunos.model.repository.AlunoRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/alunos")
