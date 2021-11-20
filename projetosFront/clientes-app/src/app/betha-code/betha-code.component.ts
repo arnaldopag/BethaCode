@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BethaCodeComponent implements OnInit {
 
-  constructor() { }
+  nomeScript: String;
+  constructor() { 
+    this.nomeScript = "Arnaldo - teste"
+  }
 
   ngOnInit(): void {
   }
