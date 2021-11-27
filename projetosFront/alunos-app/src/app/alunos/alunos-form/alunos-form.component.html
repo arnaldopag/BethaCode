@@ -3,7 +3,104 @@
   <li class="breadcrumb-item active">Informações do Aluno</li>
 </ol>
 <div class="container">
-  <form action="PUT">
-    <input type="text" name="" id="" />
+  <form #alunoForm = 'ngForm'(ngSubmit) = "gravarAluno()"> 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-sucess" role="alert" *ngIf="sucesso == true">
+          Aluno salvo com sucesso!!!!!!!!!!!
+        </div>
+      
+        <div class="alert alert-danger" role="alert" *ngFor="let meuErro of errosApi">
+          {{meuErro}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>ID</label>
+          <input type="text" class="form-control" disabled = true [(ngModel)]="aluno.id"name="id"/>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div class="form-group">
+          <label>Nome: </label>
+          <input type="text" class="form-control" [(ngModel)]="aluno.nome"name="nome"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>Idade</label>
+          <input type="text" class="form-control"[(ngModel)]="aluno.idade"name="idade" />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>Data Matricula: </label>
+          <input type="text" class="form-control" disabled=true [(ngModel)]="aluno.dataMatricula"name="dataMatricula"/>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Numero: </label>
+          <input type="text" class="form-control" [(ngModel)]="aluno.numero"name="numero"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-9">
+        <div class="form-group">
+          <label>Rua</label>
+          <input type="text" class="form-control" [(ngModel)]="aluno.rua"name="rua" />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>Cep: </label>
+          <input type="text" class="form-control" [(ngModel)]="aluno.cep"name="cep"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Bairro:</label>
+          <input type="text" class="form-control" [(ngModel)]="aluno.bairro"name="bairro"/>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>Cidade: </label>
+          <input type="text" class="form-control" [(ngModel)]="aluno.cidade"name="cidade"/>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>UF: </label>
+          <input type="text" class="form-control" [(ngModel)]="aluno.uf"name="uf"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-save"></i>
+          Salvar
+        </button>
+      </div>
+    </div>
   </form>
 </div>
