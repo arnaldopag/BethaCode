@@ -9,9 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/alunos")
+@CrossOrigin("http://localhost:4200")
 public class AlunoController {
 
     private final AlunoRepository repository;
@@ -24,6 +27,10 @@ public class AlunoController {
     @ResponseStatus(HttpStatus.CREATED)
     public Aluno salvar(@Valid @RequestBody Aluno aluno){
         return repository.save(aluno);
+    }
+    @GetMapping
+    public List<Aluno> achartodos(){
+        return repository.findAll();
     }
     @GetMapping("{id}")
     public Aluno acharPorId(@PathVariable Integer id){
