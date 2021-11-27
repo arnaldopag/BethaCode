@@ -30,7 +30,7 @@ public class AlunoController {
     }
     @GetMapping
     public List<Aluno> achartodos(){
-        return repository.findAll();x
+        return repository.findAll();
     }
     @GetMapping("{id}")
     public Aluno acharPorId(@PathVariable Integer id){
